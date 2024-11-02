@@ -9,14 +9,13 @@ class PostSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding:const EdgeInsets.all(8.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
          const Padding(
             padding: const EdgeInsets.only(left: 16.0, bottom: 8.0),
             child: Text(
-              'Friends Activity',
+              'Shops Activity',
               style: TextStyle(fontSize:24,fontWeight:  FontWeight.bold),
             ),
           ),

@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:thrift_shop/models/shoes.dart';
+import 'package:thrift_shop/models/shop.dart';
+
 
 class ShopItem extends StatelessWidget {
   final Item item;
-  const ShopItem({super.key,required this.item});
+
+  const ShopItem({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    final colorSceme =Theme.of(context).colorScheme;
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(child: _buildListItem()),
         _buildImageStack(colorScheme),
-
       ],
-
-
     );
   }
-  Widget _buildListItem(){
+
+  Widget _buildListItem() {
     return ListTile(
       contentPadding: const EdgeInsets.all(8.0),
       title: Text(item.name),
@@ -27,18 +28,18 @@ class ShopItem extends StatelessWidget {
     );
   }
 
-  Widget _buildSubtitle(){
+  Widget _buildSubtitle() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildDescription(),
-        const SizedBox(height: 4,),
+        const SizedBox(height: 4),
         _buildPriceAndLikes(),
       ],
     );
   }
 
-  Widget  _buildDescription(){
+  Widget _buildDescription() {
     return Text(
       item.description,
       maxLines: 2,
@@ -46,17 +47,21 @@ class ShopItem extends StatelessWidget {
     );
   }
 
-  Widget _buildPriceAndLikes(){
+  Widget _buildPriceAndLikes() {
     return Row(
       children: [
         Text('${item.price}'),
-        const SizedBox(width: 4,),
-        const Icon(Icons.thumb_up,color: Colors.blue,size: 18,)
+        const SizedBox(width: 4),
+        const Icon(
+          Icons.thumb_up,
+          color: Colors.red,
+          size: 18,
+        ),
       ],
     );
   }
 
-  Widget _buildImageStack(ColorScheme colorScheme){
+  Widget _buildImageStack(ColorScheme colorScheme) {
     return Stack(
       children: [
         _buildImage(),
@@ -65,7 +70,7 @@ class ShopItem extends StatelessWidget {
     );
   }
 
-  Widget _buildImage(){
+  Widget _buildImage() {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: ClipRRect(
@@ -75,8 +80,33 @@ class ShopItem extends StatelessWidget {
           child: Image.network(
             item.image,
             fit: BoxFit.cover,
-          ),),
+          ),
+        ),
       ),
-      );
+    );
+  }
+
+  Widget _buildAddButton(ColorScheme colorScheme) {
+    return Positioned(
+      bottom: 8.0,
+      right: 8.0,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 8.0,
+          vertical: 4.0,
+        ),
+        decoration: BoxDecoration(
+          color: colorScheme.onPrimary,
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        child: const Text(
+          'Add',
+          style: TextStyle(
+            fontSize: 12.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
   }
 }

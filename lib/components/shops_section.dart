@@ -26,13 +26,13 @@ class ShopsSection extends StatelessWidget {
           ),
           //TODO:add shops list view
           SizedBox(
-            height: 300,
+            height: 230,
             child: ListView.builder(
               scrollDirection:Axis.horizontal,
               itemCount: shops.length,
               itemBuilder: (context,index){
                 return SizedBox(
-                  width: 400,
+                  width: 300,
                   child:ShopCard(shop: shops[index]) ,
                 );
               }

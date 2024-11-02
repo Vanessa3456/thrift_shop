@@ -20,7 +20,8 @@ class CategoryCard extends StatelessWidget {
               ClipRRect(//Clips the image with the rounded corners
                 
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(8.0)),
-                child: Image.asset(category.imageUrl,height: 200,),
+                child: Image.asset(category.imageUrl, height: 150.0, // Adjust based on available space
+        fit: BoxFit.cover,),
               )
             ],),
           //TODO:Add listtile widget

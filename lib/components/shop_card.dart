@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thrift_shop/models/shop.dart';
+import 'package:thrift_shop/screens/shop_page.dart';
 
 class ShopCard extends StatefulWidget {
   final Shop shop;
@@ -29,7 +30,7 @@ class _ShopCardState extends State<ShopCard> {
             borderRadius:
                 const BorderRadius.vertical(top: Radius.circular(8.0)),
             child: AspectRatio(
-              aspectRatio: 1,
+              aspectRatio: 2,
               child: Stack(
                 fit: StackFit.expand,
                 children: [
@@ -92,9 +93,12 @@ class _ShopCardState extends State<ShopCard> {
             ),
 
             onTap: () {
-// ignore: avoid_print
-              print('Tap on ${widget.shop.name}');
-            },
+              Navigator.push(context, 
+              MaterialPageRoute(builder: 
+              (context)=>
+              ShopPage(shop: widget.shop)));
+
+            }
           ),
         ],
       ),

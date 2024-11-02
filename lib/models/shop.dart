@@ -51,7 +51,7 @@ List<Shop> shops = [
         description:
             '''We have a collection of adidas,airforce,puma and any type of shoe that you want''',
         price: 'ksh2500-5000',
-        image: 'assets/shoes/airforce1.jpg',
+        image: 'assets/shoes/airforce1R.jpg',
       ),
       Item(
         name: 'Clothes',
@@ -90,14 +90,14 @@ List<Shop> shops = [
         name: 'Airforce',
         description: '''We have a collection of all colors''',
         price: 'ksh2500-5000',
-        image: 'assets/shoes/airforce1.jpg',
+        image: 'assets/shoes/airforce1W.jpg',
       ),
       Item(
         name: 'Airmax',
         description:
             '''We got you covered with all the types including the latest''',
         price: 'ksh3000-6000',
-        image: 'assets/clothes/airmaxR.jpg',
+        image: 'assets/shoes/airmaxR.jpg',
       ),
       Item(
         name: 'Men Official Shoes',
@@ -154,8 +154,8 @@ List<Shop> shops = [
     'Clothes',
     'JoyLand',
     'Clothes',
-    'lib/images/cargo2.jpg',
-    'lib/images/shop1.jpg',
+    'assets/clothes/flowereddress.jpg',
+    'assets/clothes/flowereddress.jpg',
     2.1,
     4.5,
     [
